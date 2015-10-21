@@ -2,16 +2,31 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-        <title>RandomBlog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static "css/blog.css" %}">
-        </head>
+        <link rel="stylesheet" href="{% static "css/fix.css" %}">
+        <title>My Blog</title>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">My Blog</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                   <!--  <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li> -->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url "blog.views.post_new" %}">New post</a></li>
+                </ul>
+            </div>
+        </nav>
+    </head>
 	<body>
-	<div class="page-header">
-        <a href="{% url "blog.views.post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>   
-		<h1><a href="/">My Django Blog</a></h1>
-	</div>
 		<div class="content container">
             <div class="row">
                 <div class="col-md-8">
